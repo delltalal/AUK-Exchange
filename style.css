@@ -250,7 +250,126 @@ a {
 
 /* Login Page */
 
+#loginEmail, #loginPassword,#loginstdId {
+    border: 2px solid #9F2D41;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 12px;
+    margin-right: 4px;
+    outline: none;
+    font-family: Mulish;
+    border-radius: 20px;
+    height: 36px;
+    margin-top: 20px;
+}
+
+#loginFormSection{
+    margin-top: 50px;
+    margin-left: 35%;
+}
+
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+#loginFormHeading{
+    color: #9F2D41;
+}
+#btnLogin{
+    background-color: #9F2D41;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 300px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    /*margin-left: 5px;*/
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+#btnLogin:hover {
+    color:#D69622;
+}
+#btnLogin{
+    color: #F4F4F4;
+}
+
+#btnLogin:hover {
+    color: #FFB52E;
+}
+.footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+
 /* Signup Page */
+
+#singupEmail, #singupPassword,#singupstdId,#singupName, #singupphoneNumber {
+    border: 2px solid #9F2D41;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 12px;
+    margin-right: 4px;
+    outline: none;
+    font-family: Mulish;
+    border-radius: 20px;
+    height: 36px;
+    margin-top: 20px;
+}
+
+#singupFormSection{
+    margin-top: 50px;
+    margin-left: 35%;
+}
+
+
+#singupForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+#singupFormHeading{
+    color: #9F2D41;
+}
+#btnsignup{
+    background-color: #9F2D41;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 300px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    /*margin-left: 5px;*/
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+#btnsignup:hover {
+    color:#D69622;
+}
+#btnsignup{
+    color: #F4F4F4;
+}
+
+#btnsignup:hover {
+    color: #FFB52E;
+}
+.footer{
+    margin-top: 50px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+
+
+
 
 /* Textbooks Page */
 
