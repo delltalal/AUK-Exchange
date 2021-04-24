@@ -44,7 +44,34 @@
         </ul>
       </div>
     </nav>
-        <footer class="footer">
+    <section class="siginForm" id="loginFormSection">
+      <h2 id="loginFormHeading">Login Here</h2>
+      <form id="loginForm" accept="homepage.html" method="POST"> 
+        <input
+                type="text"
+                name="studentId"
+                id="loginstdId"
+                placeholder="Enter Student Id"
+                required
+          />
+        <input
+                type="email"
+                name="email"
+                id="loginEmail"
+                placeholder="Enter Your Email"
+                required
+          />
+          <input
+                type="password"
+                name="password"
+                id="loginPassword"
+                placeholder="Enter Your Password"
+                required
+          />
+          <input type="submit" id="btnLogin" value="Login" >
+      </form>
+    </section>
+    <footer class="footer">
       <div class="footer-content container">
         <div class="footer-title">
           <h4 class="footer-title_subject">CSIS 255 Project</h4>
