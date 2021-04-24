@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/94d3d9c85c.js"
       crossorigin="anonymous"
@@ -29,7 +29,9 @@
             </form>
           </li>
           <li class="top-nav_item2"><a href="login.html">Log In</a></li>
-          <li class="top-nav_item3"><a class="highlight-yellow" href="signup.html">Sign Up</a></li>
+          <li class="top-nav_item3">
+            <a class="highlight-yellow" href="signup.html">Sign Up</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -44,52 +46,44 @@
         </ul>
       </div>
     </nav>
-      <section class="singupForm" id="singupFormSection">
-        <h2 id="singupFormHeading">Sign Up Here</h2>
-        <form id="singupForm" accept="homepage.html" method="POST"> 
-          <input
-                    type="text"
-                    name="name"
-                    id="singupName"
-                    placeholder="Enter Your Name"
-                    required
-              />
-            <input
-                    type="text"
-                    name="studentId"
-                    id="singupstdId"
-                    placeholder="Enter Student Id"
-                    required
-              />
-            <input
-                    type="email"
-                    name="email"
-                    id="singupEmail"
-                    placeholder="Enter Your Email"
-                    required
-              />
-              <input
-                    type="number"
-                    name="phoneNumber"
-                    id="singupphoneNumber"
-                    placeholder="Enter Your Phone Number"
-                    required
-              />
-              <input
-                    type="password"
-                    name="password"
-                    id="singupPassword"
-                    placeholder="Enter Your Password"
-                    required
-              />
-              <input type="submit" id="btnsignup" value="Sign Up" />
+    <section class="signupFormContainer container">
+      <h2 class="FormHeading">Sign Up Here</h2>
+      <form class= "signupForm" id="signupForm" accept="homepage.html" method="POST">
+        <input
+          type="text"
+          name="name"
+          class="signupbox"
+          id="signupName"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          class="signupbox"
+          id="signupEmail"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="number"
+          name="phoneNumber"
+          class="signupbox"
+          id="signupphoneNumber"
+          placeholder="Phone Number"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          class="signupbox"
+          id="signupPassword"
+          placeholder="Password"
+          required
+        />
+        <input type="submit" class="submitbtn" value="Sign Up" />
       </form>
     </section>
-
-
-
-
-
 
     <footer class="footer">
       <div class="footer-content container">

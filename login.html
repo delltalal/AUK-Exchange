@@ -44,31 +44,24 @@
         </ul>
       </div>
     </nav>
-    <section class="siginForm" id="loginFormSection">
-      <h2 id="loginFormHeading">Login Here</h2>
-      <form id="loginForm" accept="homepage.html" method="POST"> 
-        <input
-                type="text"
-                name="studentId"
-                id="loginstdId"
-                placeholder="Enter Student Id"
-                required
-          />
+    <section class="loginFormContainer container" class="loginFormSection">
+      <h2 class="FormHeading">Login Here</h2>
+      <form class="loginForm" accept="homepage.html" method="POST"> 
         <input
                 type="email"
                 name="email"
-                id="loginEmail"
-                placeholder="Enter Your Email"
+                class="loginbox"
+                placeholder="Email"
                 required
           />
           <input
                 type="password"
                 name="password"
-                id="loginPassword"
-                placeholder="Enter Your Password"
+                class="loginbox"
+                placeholder="Password"
                 required
           />
-          <input type="submit" id="btnLogin" value="Login" >
+          <input type="submit" class="submitbtn" value="Login" >
       </form>
     </section>
     <footer class="footer">
