@@ -30,6 +30,7 @@ a {
   color: #ffb52e !important;
 }
 
+
 .submitbtn {
   color: #f4f4f4;
   background-color: #9f2d41;
@@ -44,7 +45,7 @@ a {
 }
 .submitbtn:hover {
   color: #7e2a39;
-  
+
   background-color: #d69622;
 }
 
@@ -262,10 +263,10 @@ a {
   background-color: #9f2d41;
 }
 
-
 /*  Login & Signup Page */
 
-.signupbox, .loginbox {
+.signupbox,
+.loginbox {
   font-family: Mulish;
   font-weight: bold;
   font-size: 16px;
@@ -277,23 +278,24 @@ a {
   border-radius: 20px;
   height: 36px;
   margin: 10px;
-  
 }
 
-.signupbox:focus, .loginbox:focus {
+.signupbox:focus,
+.loginbox:focus {
   border: 2px solid #d69622;
-
 }
 
-.signupFormContainer, .loginFormContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 550px;
+.signupFormContainer,
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
 }
 
-.signupForm, .loginForm {
+.signupForm,
+.loginForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -302,8 +304,8 @@ a {
 .FormHeading {
   color: #9f2d41;
   font-weight: bold;
- font-size: 50px;
- margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 /* Textbooks Page */

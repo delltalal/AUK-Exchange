@@ -48,12 +48,33 @@
     </nav>
     <section class="signupFormContainer container">
       <h2 class="FormHeading">Sign Up Here</h2>
-      <form class= "signupForm" id="signupForm" accept="homepage.html" method="POST">
+      <form
+        class="signupForm"
+        id="signupForm"
+        accept="homepage.html"
+        method="POST"
+      >
+      <input
+          type="text"
+          name="Fname"
+          class="signupbox"
+          id="signupFname"
+          placeholder="First Name"
+          required
+        />
         <input
           type="text"
-          name="name"
+          name="Lname"
           class="signupbox"
-          id="signupName"
+          id="signupLname"
+          placeholder="Last Name"
+          required
+        />
+        <input
+          type="text"
+          name="User"
+          class="signupbox"
+          id="signupUser"
           placeholder="Username"
           required
         />
@@ -65,6 +86,122 @@
           placeholder="Email"
           required
         />
+        <select
+          class="signupbox"
+          id="location"
+          required
+        >
+          <option value = "0" selected">Location</option>
+          <option value="2544">Abdalah Port</option>
+          <option value="146">Abdullah Al Mubarak - West Jleeb</option>
+          <option value="2484">Abohasanya</option>
+          <option value="2536">Abuftaira</option>
+          <option value="2524">Abuhalifa</option>
+          <option value="2542">Adailiya</option>
+          <option value="2438">Adan</option>
+          <option value="2442">Ahmadi</option>
+          <option value="2546">Ahmadi port</option>
+          <option value="2448">Andalous</option>
+          <option value="2456">Ardya</option>
+          <option value="2558">Ardya Industrial</option>
+          <option value="2560">Ashbeliah</option>
+          <option value="2464">Bayan</option>
+          <option value="2586">Bedaae</option>
+          <option value="2478">Bneid-Gar</option>
+          <option value="2602">Canada Dry</option>
+          <option value="2592">Dahya</option>
+          <option value="168">Daiya</option>
+          <option value="170">Dasma</option>
+          <option value="172">Dasman</option>
+          <option value="2468">Dhaher</option>
+          <option value="2474">Dhajeej</option>
+          <option value="2612">Doha</option>
+          <option value="2486">Egiala</option>
+          <option value="45449">Establat</option>
+          <option value="2490">Fahaheel</option>
+          <option value="2492">Fahedsalem</option>
+          <option value="180">Faiha</option>
+          <option value="2496">Farwaniya</option>
+          <option value="2458">Farwaniya Hospital</option>
+          <option value="2450">Ferdous</option>
+          <option value="2526">Fintas</option>
+          <option value="51477">Fnaitess</option>
+          <option value="2614">Ghornata</option>
+          <option value="2566">Hadiya</option>
+          <option value="2444">Hawally</option>
+          <option value="2570">Hitteen</option>
+          <option value="2472">Jaber elali</option>
+          <option value="188">Jabriya</option>
+          <option value="2516">Jahra</option>
+          <option value="2500">Jahra Industrial</option>
+          <option value="2510">Jahraa Hospital</option>
+          <option value="2476">Jleeb Residential</option>
+          <option value="2600">Jiwan</option>
+          <option value="192">Kaifan</option>
+          <option value="2522">Khaitan</option>
+          <option value="194">Khaldiya</option>
+          <option value="2528">Mahboula</option>
+          <option value="2530">Manqaf</option>
+          <option value="198">Mansouriya</option>
+          <option value="2582">Messila</option>
+          <option value="2588">Maidan Hawally</option>
+          <option value="200">Mirqab</option>
+          <option value="2534">Mishref</option>
+          <option value="2538">Mubarak Kabeer</option>
+          <option value="2494">Mubarakiya</option>
+          <option value="2512">Naeem</option>
+          <option value="2452">Nahda</option>
+          <option value="2504">Nasseem</option>
+          <option value="2454">New Andlos</option>
+          <option value="2440">New Messila</option>
+          <option value="45443">North West Al Sulaibekhat</option>
+          <option value="208">Nuzha</option>
+          <option value="2550">Omalhiyman</option>
+          <option value="212">Omariya</option>
+          <option value="2506">Oyoun</option>
+          <option value="2482">Qadsiya</option>
+          <option value="2616">Qairawan</option>
+          <option value="2514">Qasr</option>
+          <option value="2564">Qortuba</option>
+          <option value="2540">Qurain</option>
+          <option value="2554">Qurain Markets</option>
+          <option value="2556">Qusour</option>
+          <option value="218">Rabiya</option>
+          <option value="2604">Rai</option>
+          <option value="222">Rawda</option>
+          <option value="2606">Reggai</option>
+          <option value="224">Rehab</option>
+          <option value="2568">Riqqa</option>
+          <option value="2446">Rumaithiya</option>
+          <option value="2576">Saadabdalah</option>
+          <option value="2460">Sabah nasser</option>
+          <option value="2580">Sabahiya</option>
+          <option value="2584">Sabahsalem</option>
+          <option value="226">Sabhan</option>
+          <option value="2572">Salam</option>
+          <option value="232">Salmiya</option>
+          <option value="2466">Salwa</option>
+          <option value="234">Sawaber</option>
+          <option value="2590">Shaab</option>
+          <option value="236">Shamiya</option>
+          <option value="238">Sharq</option>
+          <option value="2596">Shuhada</option>
+          <option value="2608">Shuwaikh Hospital</option>
+          <option value="2594">Shuwaikh Hesidential</option>
+          <option value="2610">Shuwaikh Industrial</option>
+          <option value="2574">Siddiq</option>
+          <option value="2578">South Jahra</option>
+          <option value="2620">Sulabiya Industrial</option>
+          <option value="2618">Sulaibikhat</option>
+          <option value="2622">Sulaibiya</option>
+          <option value="246">Surra</option>
+          <option value="2508">Tima</option>
+          <option value="2518">Waha</option>
+          <option value="2470">West Fintas</option>
+          <option value="2532">West Mishref</option>
+          <option value="248">Yarmouk</option>
+          <option value="2598">Zahra</option>
+        </select>
         <input
           type="number"
           name="phoneNumber"
