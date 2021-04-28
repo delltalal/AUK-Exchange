@@ -59,6 +59,16 @@ option {
   color: black;
 }
 
+/* removes arrows in input[type="number"] */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+
 /* Top Navigation Bar */
 .top-nav {
   background-color: #f4f4f4;
