@@ -48,7 +48,7 @@ $_user_data = check_login($con);
     <div class="bottom-nav_content container">
       <ul class="bottom-nav_list">
         <li><a href="homepage.php">Home</a></li>
-        <li><a class="highlight-php" href="book.html">Textbooks</a></li>
+        <li><a class="highlight-yellow" href="book.php">Textbooks</a></li>
         <li><a href="stationery.php">Stationery</a></li>
         <li><a href="tutoring.php">Tutoring</a></li>
         <li><a href="other.php">Others</a></li>
