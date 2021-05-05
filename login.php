@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         die;
       }
     }
-    echo "Wrong username or password!";
+    echo "<div class='error-message'>Wrong username or password!</div>";
   }
 }
 ?>
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </li>
-        <li class="top-nav_item2"><a href="login.php">Log In</a></li>
+        <li class="top-nav_item2"><a class="highlight-dark-yellow" href="login.php">Log In</a></li>
         <li class="top-nav_item3"><a href="signup.php">Sign Up</a></li>
       </ul>
     </div>

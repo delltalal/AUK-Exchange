@@ -48,6 +48,12 @@ a {
   background-color: #d69622;
 }
 
+.error-message {
+  background-color: #ffaaba;
+  text-align: center;
+  padding: 4px 0;
+}
+
 /* first select option element turns gray and disapears */
 select:required:invalid {
   color: gray;
