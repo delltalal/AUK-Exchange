@@ -386,6 +386,13 @@ input[type="number"] {
   border-right: #9f2d41 solid 3px;
 }
 
+.account_list  .first-item {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #9f2d41;
+  text-align: center;
+
+}
 .account_info {
   padding-left: 30px;
 }

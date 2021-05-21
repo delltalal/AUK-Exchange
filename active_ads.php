@@ -64,6 +64,7 @@ $_user_data = check_login($con);
         <h1 class="account_heading"><?php echo $_user_data['Username'] ?>'s Account</h1>
         <div class="account_content">
             <ul class="account_list">
+                <li class="first-item">Navigation</li>
                 <li><a href="account.php">Account Information</a></li>
                 <li><a class="highlight-dark-yellow" href="active_ads.php">Active Ads</a></li>
             </ul>
