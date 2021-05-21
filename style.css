@@ -370,7 +370,7 @@ input[type="number"] {
 .account_heading {
   color: #9f2d41;
   text-align: center;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 20px 0;
 }
 
 .account_content {
@@ -384,6 +384,7 @@ input[type="number"] {
 .account_list {
   padding-right: 30px;
   border-right: #9f2d41 solid 3px;
+  height: 50vh;
 }
 
 .account_list  .first-item {
@@ -391,16 +392,26 @@ input[type="number"] {
   margin-bottom: 10px;
   color: #9f2d41;
   text-align: center;
-
 }
 .account_info {
   padding-left: 30px;
 }
 
+
+
 .account_info li {
   margin-bottom: 6px;
+}
+
+.account_info_title {
+  font-weight: bold;
+  padding-bottom: 8px;
+  color: #9f2d41;
 }
 
 .account_info span {
   font-weight: bold;
   color:#9f2d41
+}
+
+/*active_ads Page*/

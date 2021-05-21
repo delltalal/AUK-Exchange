@@ -24,20 +24,20 @@ $_user_data = check_login($con);
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <form action="script.js">
+                    <form action="search.php" method="GET">
                         <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
-                <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
-                        <?php echo $_user_data['Username'] ?></a></li>
-                <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
+                    <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
+                            <?php echo $_user_data['Username'] ?></a></li>
+                    <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
 
                 <?php } else { ?>
 
-                <li class="top-nav_item2"><a href="login.php">Log In</a></li>
-                <li class="top-nav_item3"><a href="signup.php">Sign Up</a></li>
+                    <li class="top-nav_item2"><a href="login.php">Log In</a></li>
+                    <li class="top-nav_item3"><a href="signup.php">Sign Up</a></li>
 
                 <?php } ?>
             </ul>

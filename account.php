@@ -25,7 +25,7 @@ $_user_data = check_login($con);
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <form action="script.js">
+                    <form action="search.php" method="GET">
                         <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
@@ -70,6 +70,7 @@ $_user_data = check_login($con);
             </ul>
 
             <ul class="account_info">
+                <li class="account_info_title">Account Information</li>
                 <li>
                     <span>Name:</span> <?php echo $_user_data['Fname'] ?> <?php echo $_user_data['Lname'] ?>
                 </li>
