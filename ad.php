@@ -1,3 +1,12 @@
+<?php
+session_start();
+include("connection.php");
+include("functions.php");
+
+$_user_data = check_login($con);
+
+?>
+
 <html lang="en">
 
 <head>
