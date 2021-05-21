@@ -360,3 +360,41 @@ input[type="number"] {
 /* Other Page */
 
 /* Search Page */
+
+/*Account Page*/
+.account_main {
+  height: 70vh;
+}
+.account_heading {
+  color: #7e2a39;
+  text-align: center;
+  padding: 30px  0 10px 0;
+}
+
+.account_content {
+  display: flex;
+  
+}
+
+.account_content ul {
+  list-style: none;
+}
+
+.account_list {
+  padding-right: 30px;
+  border-right: #9f2d41 solid 3px;
+}
+
+.account_info {
+  padding-left: 30px;
+  
+}
+
+.account_info li {
+  margin-bottom: 6px;
+}
+
+.account_info span {
+  
+}
+
