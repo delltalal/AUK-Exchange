@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("connection.php");
+include("functions.php");
+
+$_user_data = check_login($con);
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,8 +31,8 @@
                     </form>
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
-                <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
-                        <?php echo $_user_data['Username'] ?></a></li>
+                <li class="top-nav_item2"><a class="highlight-dark-yellow" href="account.php"><i
+                            class="fas fa-user fa-lg"></i>&nbsp; <?php echo $_user_data['Username'] ?></a></li>
                 <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
 
                 <?php } else { ?>
@@ -44,14 +54,26 @@
                 </li>
                 <li><a href="tutoring.php">Tutoring</a></li>
                 <li><a href="other.php">Others</a></li>
-                <li class="bottom-nav_lastitem">
-                    <a href="ad.php" class="highlight-dark-yellow highlight-dark-yellow-border"> Place an
-                        Ad</a>
-                </li>
+                <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="ad.php"
+                        <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
             </ul>
         </div>
     </nav>
-    <footer class="footer">
+
+    <main class="account_main container">
+        <h1 class="account_heading"><?php echo $_user_data['Username'] ?>'s Account</h1>
+        <div class="account_content">
+            <ul class="account_list">
+                <li><a href="account.php">Account Information</a></li>
+                <li><a class="highlight-dark-yellow" href="active_ads.php">Active Ads</a></li>
+            </ul>
+
+            <ul class="active_ads">
+
+            </ul>
+        </div>
+    </main>
+    <footer class=" footer">
         <div class="footer-content container">
             <div class="footer-title">
                 <h4 class="footer-title_subject">CSIS 255 Project</h4>
