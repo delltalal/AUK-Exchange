@@ -32,7 +32,8 @@ $_user_data = check_login($con);
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
                 <li class="top-nav_item2"><a class="highlight-dark-yellow" href="account.php"><i
-                            class="fas fa-user fa-lg"></i>&nbsp; <?php echo $_user_data['Username'] ?></a></li>
+                            class="fas fa-user fa-lg"></i>&nbsp;
+                        <?php echo $_user_data['Username'] ?></a></li>
                 <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
 
                 <?php } else { ?>
@@ -68,11 +69,19 @@ $_user_data = check_login($con);
                 <li><a href="account.php">Account Information</a></li>
                 <li><a class="highlight-dark-yellow" href="active_ads.php">Active Ads</a></li>
             </ul>
+            <div class="active-ads-content">
+                <p class="active_ad_title">Active Ads</p>
 
+                <div class="active_ad_cards">
+                    <?php
+                    $result = getListData($con, $_user_data['ID']);
 
-            <ul class="account_info active_ads">
-                <li class="account_info_title">Active Ads</li>
-            </ul>
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        component($row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
     </main>
     <footer class=" footer">
