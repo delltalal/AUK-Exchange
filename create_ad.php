@@ -30,14 +30,14 @@ $_user_data = check_login($con);
                     </form>
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
-                    <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
-                            <?php echo $_user_data['Username'] ?></a></li>
-                    <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
+                <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
+                        <?php echo $_user_data['Username'] ?></a></li>
+                <li class="top-nav_item3"><a href="logout.php">Log Out</a></li>
 
                 <?php } else { ?>
 
-                    <li class="top-nav_item2"><a href="login.php">Log In</a></li>
-                    <li class="top-nav_item3"><a href="signup.php">Sign Up</a></li>
+                <li class="top-nav_item2"><a href="login.php">Log In</a></li>
+                <li class="top-nav_item3"><a href="signup.php">Sign Up</a></li>
 
                 <?php } ?>
             </ul>
@@ -60,6 +60,29 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
+
+
+
+    <main>
+        <h1 class="create_ad_title">Place an Ad</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="ad_title">Ad title:</label>
+            <input type="text" id="ad_title" name="ad_title"></input>
+            <br />
+            <label for="ad_price ">Set price:</label>
+            <input type="number" id="ad_price" name="ad_price"></input> KD
+            <p>Select an image:</p>
+            <input type="file" name="ad_img">
+            <br />
+
+            <input type="submit" value="Post this ad">
+        </form>
+    </main>
+
+
+
+
+
     <footer class="footer">
         <div class="footer-content container">
             <div class="footer-title">

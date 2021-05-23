@@ -34,7 +34,7 @@ $element = '
 echo $element;
 }
 
-function getListData($con, $id)
+function getUserListingsData($con, $id)
 {
 $query = "SELECT * FROM listings WHERE account_fk = '$id'";
 $result = mysqli_query($con, $query);

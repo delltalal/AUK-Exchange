@@ -54,7 +54,7 @@ $_user_data = check_login($con);
                 </li>
                 <li><a href="tutoring.php">Tutoring</a></li>
                 <li><a href="other.php">Others</a></li>
-                <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="ad.php"
+                <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
             </ul>
 
