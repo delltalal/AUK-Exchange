@@ -74,7 +74,17 @@ $_user_data = check_login($con);
                 <div class="main-content_title_line"></div>
             </div>
 
-            <div class="main-content_slider"></div>
+            <div class="main-content_slider">
+                <?php
+                $result = getLatestListingsData($con);
+                if (!$result) {
+                    exit('No listings are available at the moment.');
+                }
+                while ($row = mysqli_fetch_assoc($result)) {
+                    component($row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
+                }
+                ?>
+            </div>
         </div>
     </main>
     <footer class="footer">

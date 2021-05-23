@@ -27,7 +27,7 @@ a {
   color: #d69622 !important;
 }
 .highlight-dark-yellow-border {
-  border-color: #d69622 !important
+  border-color: #d69622 !important;
 }
 .highlight-yellow {
   color: #ffb52e !important;
@@ -55,6 +55,39 @@ a {
   background-color: #ffaaba;
   text-align: center;
   padding: 4px 0;
+}
+
+.textbox {
+  font-family: Mulish;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #9f2d41;
+  width: 250px;
+  padding-left: 12px;
+  margin-right: 4px;
+  outline: none;
+  border-radius: 20px;
+  height: 36px;
+  margin: 10px;
+}
+
+.textbox-xl {
+  font-family: Mulish;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #9f2d41;
+  width: 250px;
+  padding: 12px 0 0 12px;
+  margin-right: 4px;
+  outline: none;
+  border-radius: 20px;
+  height: 300px;
+  margin: 10px;
+}
+
+.textbox:focus,
+.textbox-xl:focus {
+  border: 2px solid #d69622;
 }
 
 /* first select option element turns gray and disapears */
@@ -308,27 +341,14 @@ input[type="number"] {
   background-color: #9f2d41;
 }
 
+.main-content_slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 30px 0;;
+}
+
 /*  Login & Signup Page */
-
-.signupbox,
-.loginbox {
-  font-family: Mulish;
-  font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #9f2d41;
-  width: 250px;
-  padding-left: 12px;
-  margin-right: 4px;
-  outline: none;
-  border-radius: 20px;
-  height: 36px;
-  margin: 10px;
-}
-
-.signupbox:focus,
-.loginbox:focus {
-  border: 2px solid #d69622;
-}
 
 .signupFormContainer,
 .loginFormContainer {
@@ -386,7 +406,7 @@ input[type="number"] {
   height: 50vh;
 }
 
-.account_list  .first-item {
+.account_list .first-item {
   font-weight: bold;
   margin-bottom: 10px;
   color: #9f2d41;
@@ -395,10 +415,7 @@ input[type="number"] {
 .account_info {
   padding-left: 30px;
   border-left: #9f2d41 solid 3px;
-  
 }
-
-
 
 .account_info li {
   margin-bottom: 6px;
@@ -412,7 +429,7 @@ input[type="number"] {
 
 .account_info span {
   font-weight: bold;
-  color:#9f2d41
+  color: #9f2d41;
 }
 
 /*active_ads Page*/
@@ -420,7 +437,6 @@ input[type="number"] {
 .active-ads-content {
   border-left: #9f2d41 solid 3px;
   margin-bottom: 20px;
-
 }
 
 .active_ad_title {
@@ -432,23 +448,23 @@ input[type="number"] {
 
 .active_ad_cards {
   display:flex;
+  flex-wrap: wrap;
 }
 
 /* item card */
 .item-card {
   border-radius: 10px;
-   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   height: 350px;
   width: 225px;
   padding: 15px;
   margin: 10px 20px;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  
 }
 
 .card-img {
-  width:200px;
+  width: 200px;
   align-self: center;
 
   height: 225px;
@@ -468,12 +484,25 @@ input[type="number"] {
 }
 
 .item-card ul {
-  display:flex;
+  list-style-type: none;
+  display: flex;
   font-size: 12px;
   color: #1b1b1b;
 }
 
 .card-date {
-  margin-left:auto;
+  margin-left: auto;
 }
 
+/* create_ad.php */
+
+.create_ad_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.create_ad_container form {
+  padding-left: 25px;
+}

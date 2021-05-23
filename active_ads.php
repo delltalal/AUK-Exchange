@@ -75,6 +75,9 @@ $_user_data = check_login($con);
                 <div class="active_ad_cards">
                     <?php
                     $result = getUserListingsData($con, $_user_data['ID']);
+                    if (!$result) {
+                        exit('You do not have any active ads!');
+                    }
 
                     while ($row = mysqli_fetch_assoc($result)) {
                         component($row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);

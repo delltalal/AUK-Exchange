@@ -67,12 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <section class="signupFormContainer container">
         <h2 class="FormHeading">Sign Up Here</h2>
         <form class="signupForm" id="signupForm" action="signup.php" method="POST">
-            <input type="text" name="Fname" class="signupbox" id="signupFname" placeholder="First Name" required />
-            <input type="text" name="Lname" class="signupbox" id="signupLname" placeholder="Last Name" required />
-            <input type="text" name="user" class="signupbox" id="signupUser" placeholder="Username" required />
-            <input type="email" name="email" class="signupbox" id="signupEmail" placeholder="Email" required />
-            <select class="signupbox" name="location" required>
-                <option value="" disabled selected>Location</option>
+            <input type="text" name="Fname" class="textbox" id="signupFname" placeholder="First Name" required />
+            <input type="text" name="Lname" class="textbox" id="signupLname" placeholder="Last Name" required />
+            <input type="text" name="user" class="textbox" id="signupUser" placeholder="Username" required />
+            <input type="email" name="email" class="textbox" id="signupEmail" placeholder="Email" required />
+            <select class="textbox" name="location" required>
+                <option disabled selected>Location</option>
                 <option>Abdalah Port</option>
                 <option>Abdullah Al Mubarak - West Jleeb</option>
                 <option>Abohasanya</option>
@@ -183,9 +183,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <option>Yarmouk</option>
                 <option>Zahra</option>
             </select>
-            <input type="number" name="number" class="signupbox" id="signupphoneNumber" placeholder="Phone Number"
+            <input type="number" name="number" class="textbox" id="signupphoneNumber" placeholder="Phone Number"
                 required />
-            <input type="password" name="password" class="signupbox" id="signupPassword" placeholder="Password"
+            <input type="password" name="password" class="textbox" id="signupPassword" placeholder="Password"
                 required />
             <input type="submit" class="submitbtn" Sign Up" />
         </form>

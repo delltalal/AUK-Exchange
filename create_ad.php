@@ -63,25 +63,58 @@ $_user_data = check_login($con);
 
 
 
-    <main>
-        <h1 class="create_ad_title">Place an Ad</h1>
+    <main class="create_ad_container">
+        <h1 class="FormHeading">Place an Ad</h1>
         <form method="post" enctype="multipart/form-data">
-            <label for="ad_title">Ad title:</label>
-            <input type="text" id="ad_title" name="ad_title"></input>
+            <input type="text" class="textbox" name="ad_title" placeholder="Enter title of the ad." required></input>
             <br />
-            <label for="ad_price ">Set price:</label>
-            <input type="number" id="ad_price" name="ad_price"></input> KD
-            <p>Select an image:</p>
-            <input type="file" name="ad_img">
+            <select class="textbox" name="ad_catergory" required>
+                <option value="" disabled selected>Select a category</option>
+                <option>Textbook</option>
+                <option>Stationery</option>
+                <option>Tutoring</option>
+                <option>Others</option>
+            </select>
+
+            <br />
+            <input type="number" class="textbox" name="ad_price" placeholder="Set a price for the item."
+                required></input>KD
+            <br />
+            <textarea class="textbox-xl" name="ad_desc" placeholder="Enter a description for the ad."
+                required></textarea>
+            <br />
+            <p class="ad_img_label">Place an image:</p>
+            <input type="hidden" name="size" value="1000000">
+            <input type="file" name="image" accept="image/*" required>
             <br />
 
-            <input type="submit" value="Post this ad">
+            <input type="submit" name="submit_ad" class="submitbtn" value="Post this ad">
         </form>
+
+        <?php
+        if (isset($_POST["submit_ad"])) {
+            $title = $_POST["ad_title"];
+            $price = $_POST["ad_price"];
+            $desc = $_POST["ad_desc"];
+            $date = date("Y-m-d");
+            $category = $_POST["ad_catergory"];
+            
+
+            $target = "images/".basename
+            ($_FILES['image']['name']); 
+            $img = $_FILES["image"]['name'];
+            move_uploaded_file($_FILES["image"]['tmp_name'],$target);
+
+            $result = mysqli_query($con, "INSERT  INTO listings (account_fk,name,price,description,date_added,Image,Category) VALUES ('" . $_user_data['ID'] . "','" . $title . "','" . $price . "','" . $desc . "','" . $date . "','" . $img . "','" . $category . "')");
+
+            if ($result) {
+                echo '<p class="successmessage">Student has been added succesfully.<p>';
+            } else {
+                echo '<p class="successmessage">Error: Unable to add student.<p>';
+            }
+        }
+        ?>
     </main>
-
-
-
-
 
     <footer class="footer">
         <div class="footer-content container">

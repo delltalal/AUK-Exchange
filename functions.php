@@ -21,7 +21,7 @@ function component($title, $price, $img, $location, $date)
 {
 $element = '
 <div class="item-card">
-    <img class="card-img" src="data:image/jpeg;base64,' . base64_encode($img) . '" alt="Ad Image">
+    <img class="card-img" src="images/'.$img.'" alt="Ad Image">
     <a href="homepage.php" class="card-title">'.$title.'</a>
 <div class="card-price">'.$price.' KD</div>
 <ul class="item-card-detail">
@@ -41,6 +41,16 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
 return $result;
 }
+}
+
+
+function getLatestListingsData($con)
+{
+    $query = "SELECT * FROM listings ORDER BY ID DESC LIMIT 4";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    }
 }
 
 ?>

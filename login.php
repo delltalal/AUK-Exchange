@@ -71,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <section class="loginFormContainer container" class="loginFormSection">
         <h2 class="FormHeading">Login Here</h2>
         <form class="loginForm" method="POST">
-            <input type="text" name="user" class="loginbox" placeholder="Username" required />
-            <input type="password" name="password" class="loginbox" placeholder="Password" required />
+            <input type="text" name="user" class="textbox" placeholder="Username" required />
+            <input type="password" name="password" class="textbox" placeholder="Password" required />
             <input type="submit" class="submitbtn" value="Login">
         </form>
     </section>
