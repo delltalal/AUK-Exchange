@@ -81,7 +81,7 @@ $_user_data = check_login($con);
                     exit('No listings are available at the moment.');
                 }
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
+                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
                 ?>
             </div>
