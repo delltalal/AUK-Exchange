@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 01:40 AM
+-- Generation Time: May 27, 2021 at 01:43 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -75,7 +75,8 @@ INSERT INTO `listings` (`ID`, `account_fk`, `name`, `price`, `description`, `dat
 (4, 2, 'Color-aid', 20, 'Color-aid paper that is used for ART 101. Very used but still useful for the course.', '2021-05-27', 'Color-aid.jpg', 'Stationery'),
 (5, 3, 'Calculus II Book', 15, 'Calculus II book that can be used for MATH 203. Great condition.', '2021-05-27', 'Math Book.jpg', 'Textbook'),
 (6, 3, 'CPEG 210 Book', 17, 'Book about digital design. Very useful for this course. ', '2021-05-27', 'CPEG 210 Book.jpg', 'Textbook'),
-(7, 2, 'English 101 Book', 5, 'English book for ENGL 101. Very worn but still useable.', '2021-05-27', 'English Book.jpg', 'Textbook');
+(7, 2, 'English 101 Book', 5, 'English book for ENGL 101. Very worn but still useable.', '2021-05-27', 'English Book.jpg', 'Textbook'),
+(8, 3, 'Scientific Calculator', 10, 'Scientific calculator for the math courses. Used but still very useful and fully functional.', '2021-05-27', 'Scientific Calculator.jpg', 'Others');
 
 --
 -- Indexes for dumped tables
@@ -109,7 +110,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
