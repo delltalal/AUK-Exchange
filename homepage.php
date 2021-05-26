@@ -25,9 +25,9 @@ $_user_data = check_login($con);
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <form action="search.php" method="GET">
-                        <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                    <form action="search.php" method="POST">
+                        <input type="text" name="search" id="search" placeholder="Search" />
+                        <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
                     </form>
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
