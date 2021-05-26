@@ -25,7 +25,7 @@ $element = '
     <a href="homepage.php" class="card-title">'.$title.'</a>
 <div class="card-price">'.$price.' KD</div>
 <ul class="item-card-detail">
-    <li class="card-location"><i class="fas fa-map-marker-alt"></i>'.$location.'</li>
+    <li class="card-location"><i class="fas fa-map-marker-alt"></i> '.$location.'</li>
 <li class="card-date">'.$date.'</li>
 
 </ul>

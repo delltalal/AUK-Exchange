@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 01:29 PM
+-- Generation Time: May 27, 2021 at 01:40 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -43,7 +43,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`ID`, `Username`, `Fname`, `Lname`, `Email`, `Location`, `Phone_Num`, `Password`) VALUES
-(3, 'hmdlhndi', 'Hamad', 'Alhendi', 'hamadalhendikw@gmail.com', 'Qadsiya', 51316776, 'password');
+(1, 'hmdlhndi', 'Hamad', 'Al-hendi', 'hmdlhndi@auk.edu.kw', 'Qadsiya', 55776912, 'password'),
+(2, 'yasmin.O', 'Yasmin', 'Al-Othman', 'yasmin123@auk.edu.kw', 'Salmiya', 50806776, 'pass123'),
+(3, 'ahmad123', 'Ahmad', 'Al-Mutairi', 'almutairi@auk.edu.kw', 'Daiya', 50302332, 'wordpass');
 
 -- --------------------------------------------------------
 
@@ -67,10 +69,13 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`ID`, `account_fk`, `name`, `price`, `description`, `date_added`, `Image`, `Category`) VALUES
-(1, 3, 'Biology Book', 12, 'Biology 100 course book. mint condition', '2021-05-23', '197777_1_ftc.jpg', 'Textbook'),
-(2, 3, 'Scientific Calculator', 15, 'A scientific calculator that can be used for the math courses.', '2021-05-24', '61QKTLG7beL._AC_SX522_.jpg', 'Stationery'),
-(3, 3, 'Physics book', 50, 'Physics book for physics.', '2021-05-24', '197777_1_ftc.jpg', 'Textbook'),
-(4, 3, 'chemistry book', 12, 'chemistry book for chemistry', '2021-05-24', '197777_1_ftc.jpg', 'Textbook');
+(1, 1, 'Biology Book', 10, 'A book for biology 100 course. Mint condition.', '2021-05-27', 'Biology Book.jpg', 'Textbook'),
+(2, 1, 'CSIS 255 Book', 10, 'A CSIS 255 book with material about HTML and CSS. Very good condition.', '2021-05-27', 'CSIS 255 Book.jpg', 'Textbook'),
+(3, 1, 'Used Macbook 2020', 200, 'Used Macbook 2020 with great specs:\r\n- M1 chipset.\r\n- 1TB storage\r\n\r\nSelling because I am buying a new one.', '2021-05-27', 'Macbook.jpg', 'Others'),
+(4, 2, 'Color-aid', 20, 'Color-aid paper that is used for ART 101. Very used but still useful for the course.', '2021-05-27', 'Color-aid.jpg', 'Stationery'),
+(5, 3, 'Calculus II Book', 15, 'Calculus II book that can be used for MATH 203. Great condition.', '2021-05-27', 'Math Book.jpg', 'Textbook'),
+(6, 3, 'CPEG 210 Book', 17, 'Book about digital design. Very useful for this course. ', '2021-05-27', 'CPEG 210 Book.jpg', 'Textbook'),
+(7, 2, 'English 101 Book', 5, 'English book for ENGL 101. Very worn but still useable.', '2021-05-27', 'English Book.jpg', 'Textbook');
 
 --
 -- Indexes for dumped tables
@@ -104,7 +109,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
