@@ -75,6 +75,15 @@ $_user_data = check_login($con);
                             }
                         } 
                     ?>
+                         <?php
+                $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Tutoring'");
+                if (!$resultii) {
+                    exit('No listings are available at the moment.');
+                }
+                while ($row = mysqli_fetch_assoc($resultii)) {
+                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                }
+                ?>
                      </main>
     <footer class="footer">
         <div class="footer-content container">
