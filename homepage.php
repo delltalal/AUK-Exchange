@@ -15,6 +15,7 @@ $_user_data = check_login($con);
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/94d3d9c85c.js" crossorigin="anonymous"></script>
+    <script src="slider.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>AUKExchange | Home</title>
 </head>
@@ -26,7 +27,7 @@ $_user_data = check_login($con);
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
                     <form action="search.php" method="POST">
-                        <input type="text" name="search" id="search" placeholder="Search" required/>
+                        <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
                     </form>
                 </li>
@@ -73,17 +74,22 @@ $_user_data = check_login($con);
                 <h3 class="main-content_title_header">Recently Added</h3>
                 <div class="main-content_title_line"></div>
             </div>
-
-            <div class="main-content_slider">
-                <?php
-                $result = getLatestListingsData($con);
-                if (!$result) {
-                    exit('No listings are available at the moment.');
-                }
-                while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
-                }
-                ?>
+            <div class="carousel-main">
+                <i class="fas fa-arrow-left" id="prevBtn"></i>
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <?php
+                        $result = getLatestListingsData($con);
+                        if (!$result) {
+                            exit('No listings are available at the moment.');
+                        }
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                        }
+                        ?>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right" id="nextBtn"></i>
             </div>
         </div>
     </main>
