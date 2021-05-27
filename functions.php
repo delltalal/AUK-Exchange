@@ -46,7 +46,7 @@ return $result;
 
 function getLatestListingsData($con)
 {
-    $query = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID ORDER BY listings.ID DESC LIMIT 8";
+    $query = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID ORDER BY listings.ID DESC LIMIT 12";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0) {
         return $result;
