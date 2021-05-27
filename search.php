@@ -63,7 +63,8 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
-    <main class="main">
+    <main class="container">
+            <div class="main-content_slider">
                     <?php
                             $search = mysqli_real_escape_string($con, $_POST['search']);
                             $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
@@ -78,7 +79,7 @@ $_user_data = check_login($con);
                                 echo "This item does not exist";
                             }
                     ?>
-                     </main>
+                     </main></div>
 
 
     <footer class="footer">

@@ -57,7 +57,7 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
-    <main class="main">
+    <main class="container">
                     <?php
                         if (isset($_POST['submit-search'])){
                             $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -74,6 +74,7 @@ $_user_data = check_login($con);
                             }
                         } 
                     ?>
+                <div class="main-content_slider">
                          <?php
                 $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
                 if (!$resultii) {
@@ -82,7 +83,7 @@ $_user_data = check_login($con);
                 while ($row = mysqli_fetch_assoc($resultii)) {
                     component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
-                ?>
+                ?></div>
                      </main>
     <footer class="footer">
         <div class="footer-content container">
