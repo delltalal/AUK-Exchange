@@ -29,7 +29,7 @@ $_user_data = check_login($con);
                         <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
                     </form>
-                    
+
                 </li>
                 <?php if (isset($_user_data['ID'])) { ?>
                 <li class="top-nav_item2"><a href="account.php"><i class="fas fa-user fa-lg"></i>&nbsp;
@@ -46,10 +46,10 @@ $_user_data = check_login($con);
 
             </ul>
         </div>
-        
+
     </nav>
-    
-    
+
+
     <nav class="bottom-nav">
         <div class="bottom-nav_content container">
             <ul class="bottom-nav_list">
@@ -64,22 +64,23 @@ $_user_data = check_login($con);
         </div>
     </nav>
     <main class="container">
-            <div class="main-content_slider">
-                    <?php
-                            $search = mysqli_real_escape_string($con, $_POST['search']);
-                            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
-                            $result = mysqli_query($con, $sql);
-                            $queryResult = mysqli_num_rows($result);
+        <div class="organize-item-card">
+            <?php
+            $search = mysqli_real_escape_string($con, $_POST['search']);
+            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
+            $result = mysqli_query($con, $sql);
+            $queryResult = mysqli_num_rows($result);
 
-                            if ($queryResult > 0){
-                                while ($row = mysqli_fetch_assoc($result)){      
-                                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']); 
-                                }
-                            } else {
-                                echo "This item does not exist";
-                            }
-                    ?>
-                     </main></div>
+            if ($queryResult > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                }
+            } else {
+                echo "This item does not exist";
+            }
+            ?>
+    </main>
+    </div>
 
 
     <footer class="footer">

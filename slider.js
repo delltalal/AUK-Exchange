@@ -13,11 +13,11 @@ let numOfItems = document.getElementsByClassName('item-card').length;
 
 //Button listeners
 nextBtn.addEventListener('click', () => {
-    if (counter < (numOfItems-4)) {
+    if (counter < (numOfItems - 4)) {
         carouselSlide.style.transition = "transform 0.4s ease-in-out";
         counter++;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-}
+    }
 })
 
 prevBtn.addEventListener('click', () => {

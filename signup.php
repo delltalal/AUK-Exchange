@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" name="user" class="textbox" id="signupUser" placeholder="Username" required />
             <input type="email" name="email" class="textbox" id="signupEmail" placeholder="Email" required />
             <select class="textbox" name="location" required>
-                <option disabled selected>Location</option>
+                <option value="" disabled selected>Location</option>
                 <option>Abdalah Port</option>
                 <option>Abdullah Al Mubarak - West Jleeb</option>
                 <option>Abohasanya</option>

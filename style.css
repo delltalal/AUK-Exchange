@@ -341,9 +341,9 @@ input[type="number"] {
   background-color: #9f2d41;
 }
 
-.main-content_slider {
+.organize-item-card {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin: 15px 0 30px 0;;
 }
