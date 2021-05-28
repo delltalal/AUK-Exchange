@@ -25,7 +25,7 @@ $_user_data = check_login($con);
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                <form action="search.php" method="POST">
+                    <form action="search.php" method="POST">
                         <input type="text" name="search" id="search" placeholder="Search" />
                         <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
                     </form>
@@ -58,33 +58,33 @@ $_user_data = check_login($con);
         </div>
     </nav>
     <main class="container">
-                    <?php
-                        if (isset($_POST['submit-search'])){
-                            $search = mysqli_real_escape_string($con, $_POST['search']);
-                            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
-                            $result = mysqli_query($con, $sql);
-                            $queryResult = mysqli_num_rows($result);
+        <?php
+        if (isset($_POST['submit-search'])) {
+            $search = mysqli_real_escape_string($con, $_POST['search']);
+            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
+            $result = mysqli_query($con, $sql);
+            $queryResult = mysqli_num_rows($result);
 
-                            if ($queryResult > 0){
-                                while ($row = mysqli_fetch_assoc($result)){      
-                                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']); 
-                                }
-                            } else {
-                                echo "This item does not exist";
-                            }
-                        } 
-                    ?>
-                <div class="main-content_slider">
-                         <?php
-                $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
-                if (!$resultii) {
-                    exit('No listings are available at the moment.');
-                }
-                while ($row = mysqli_fetch_assoc($resultii)) {
+            if ($queryResult > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
-                ?></div>
-                     </main>
+            } else {
+                echo "This item does not exist";
+            }
+        }
+        ?>
+        <div class="organize-item-card">
+            <?php
+            $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
+            if (!$resultii) {
+                exit('No listings are available at the moment.');
+            }
+            while ($row = mysqli_fetch_assoc($resultii)) {
+                component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+            }
+            ?></div>
+    </main>
     <footer class="footer">
         <div class="footer-content container">
             <div class="footer-title">
