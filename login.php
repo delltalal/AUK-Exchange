@@ -4,26 +4,26 @@ include("connection.php");
 include("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  //something was posted
-  $user = $_POST['user'];
-  $password =  $_POST['password'];
+    //something was posted
+    $user = $_POST['user'];
+    $password =  $_POST['password'];
 
-  //read from database
-  $query = "select * from accounts where Username = '$user'";
+    //read from database
+    $query = "select * from accounts where Username = '$user'";
 
-  $result = mysqli_query($con, $query);
+    $result = mysqli_query($con, $query);
 
-  if ($result) {
-    if ($result && mysqli_num_rows($result) > 0) {
-      $user_data = mysqli_fetch_assoc($result);
-      if ($user_data['Password'] === $password) {
-        $_SESSION['ID'] = $user_data['ID'];
-        header("Location: homepage.php");
-        die;
-      }
+    if ($result) {
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            if ($user_data['Password'] === $password) {
+                $_SESSION['ID'] = $user_data['ID'];
+                header("Location: homepage.php");
+                die;
+            }
+        }
+        echo "<div class='error-message'>Wrong username or password!</div>";
     }
-    echo "<div class='error-message'>Wrong username or password!</div>";
-  }
 }
 ?>
 
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/94d3d9c85c.js" crossorigin="anonymous"></script>
+    <script src="validation.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>AUKExchange | Log In</title>
 </head>
@@ -70,9 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
     <section class="loginFormContainer container" class="loginFormSection">
         <h2 class="FormHeading">Login Here</h2>
-        <form class="loginForm" method="POST">
-            <input type="text" name="user" class="textbox" placeholder="Username" required />
-            <input type="password" name="password" class="textbox" placeholder="Password" required />
+        <form name="loginForm" class="loginForm" method="POST" onsubmit="return validateLoginForm()">
+            <input type="text" name="user" class="textbox" placeholder="Username" />
+            <input type="password" name="password" class="textbox" placeholder="Password" />
             <input type="submit" class="submitbtn" value="Login">
         </form>
     </section>

@@ -4,20 +4,20 @@ include("connection.php");
 include("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  //something was posted
-  $fname = $_POST['Fname'];
-  $lname = $_POST['Lname'];
-  $user = $_POST['user'];
-  $email = $_POST['email'];
-  $location = $_POST['location'];
-  $number = $_POST['number'];
-  $password =  $_POST['password'];
+    //something was posted
+    $fname = $_POST['Fname'];
+    $lname = $_POST['Lname'];
+    $user = $_POST['user'];
+    $email = $_POST['email'];
+    $location = $_POST['location'];
+    $number = $_POST['number'];
+    $password =  $_POST['password'];
 
-  $query = "insert into accounts (Username,Fname,Lname,Email,Location,Phone_Num,Password) values ('$user','$fname','$lname','$email','$location','$number','$password')";
+    $query = "insert into accounts (Username,Fname,Lname,Email,Location,Phone_Num,Password) values ('$user','$fname','$lname','$email','$location','$number','$password')";
 
-  mysqli_query($con, $query);
-  header("Location: login.php");
-  die;
+    mysqli_query($con, $query);
+    header("Location: login.php");
+    die;
 }
 ?>
 
@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/94d3d9c85c.js" crossorigin="anonymous"></script>
+    <script src="validation.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>AUKExchange | Sign Up</title>
 </head>
@@ -66,10 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
     <section class="signupFormContainer container">
         <h2 class="FormHeading">Sign Up Here</h2>
-        <form class="signupForm" id="signupForm" action="signup.php" method="POST">
-            <input type="text" name="Fname" class="textbox" id="signupFname" placeholder="First Name" required />
-            <input type="text" name="Lname" class="textbox" id="signupLname" placeholder="Last Name" required />
-            <input type="text" name="user" class="textbox" id="signupUser" placeholder="Username" required />
+        <form name="signupForm" class="signupForm" id="signupForm" action="signup.php"
+            onsubmit="return validateSignupForm()" method="POST">
+            <input type="text" name="Fname" class="textbox" id="signupFname" placeholder="First Name" />
+            <input type="text" name="Lname" class="textbox" id="signupLname" placeholder="Last Name" />
+            <input type="text" name="user" class="textbox" id="signupUser" placeholder="Username" />
             <input type="email" name="email" class="textbox" id="signupEmail" placeholder="Email" required />
             <select class="textbox" name="location" required>
                 <option value="" disabled selected>Location</option>
@@ -183,11 +185,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <option>Yarmouk</option>
                 <option>Zahra</option>
             </select>
-            <input type="number" name="number" class="textbox" id="signupphoneNumber" placeholder="Phone Number"
-                required />
-            <input type="password" name="password" class="textbox" id="signupPassword" placeholder="Password"
-                required />
-            <input type="submit" class="submitbtn" Sign Up" />
+            <input type="number" name="number" class="textbox" id="signupphoneNumber" placeholder="Phone Number" />
+            <input type="password" name="password" class="textbox" id="signupPassword" placeholder="Password" />
+            <input type="password" name="confirm_password" class="textbox" id="confirm_signupPassword"
+                placeholder="Confirm Password" />
+            <input type="submit" class="submitbtn" value="Sign Up" />
         </form>
     </section>
 

@@ -388,6 +388,13 @@ opacity: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.signupFormContainer {
+  height: 750px;
+}
+
+.loginFormContainer {
   height: 550px;
 }
 
