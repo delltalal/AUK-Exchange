@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
                     <!-- search option -->
-                    <form action="search.php" method="GET">
-                        <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
+                    <form action="search.php" method="POST">
+                        <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </li>

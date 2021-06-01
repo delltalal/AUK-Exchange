@@ -64,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <form action="search.php" method="GET">
+                    <form action="search.php" method="POST">
                         <!-- search option -->
-                        <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
+                        <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </li>

@@ -36,8 +36,8 @@ $_user_data = check_login($con);
             <ul class="top-nav_list">
                 <!-- the search option -->
                 <li class="top-nav_item1">
-                    <form action="search.php" method="GET">
-                        <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
+                    <form action="search.php" method="POST">
+                        <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                     <!-- if a $_user_data's ID is set display their username and a logout option, else display the login and signup options. -->
