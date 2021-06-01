@@ -63,6 +63,21 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
+    <header class="header">
+        <div class="header_content container">
+            <h1 class="header_title">Search</h1>
+
+            <p class="header_info">
+                Search using keywords to find any items you may be looking for from out database.
+            </p>
+            <div class="search-bar">
+                <form action="search.php" method="POST">
+                    <input type="text" name="search" id="search" placeholder="Enter your keywords here" required />
+                    <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
     <main class="container">
         <div class="organize-item-card">
             <?php

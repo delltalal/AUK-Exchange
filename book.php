@@ -58,7 +58,20 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
+    <header class="header">
+        <div class="header_content container">
+            <h1 class="header_title">Textbooks</h1>
+            <p class="header_info">
+                You can pick and choose from a variety of books that you may need for upcoming or
+                ongoing courses!
+                For
+                more
+                details and how to contact seller. Click the item for more information.
+            </p>
+        </div>
+    </header>
     <main class="container">
+
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);

@@ -58,6 +58,18 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </nav>
+    <header class="header">
+        <div class="header_content container">
+            <h1 class="header_title">Technology</h1>
+            <p class="header_info">
+                From calculators to laptops, this is the place to find any technological needs that you have been
+                missing.
+                For
+                more
+                details and how to contact seller. Click the item for more information.
+            </p>
+        </div>
+    </header>
     <main class="container">
         <?php
         if (isset($_POST['submit-search'])) {

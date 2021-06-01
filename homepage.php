@@ -63,7 +63,7 @@ $_user_data = check_login($con);
             <h1 class="header_title">A Marketplace for Students.</h1>
             <p class="header_info">
                 A place for AUK students to buy or sell from other students.
-                <span id="highlight-yellow">AUK Exchange</span> gives students a
+                <span class="highlight-yellow">AUK Exchange</span> gives students a
                 platform to sell textbooks, class supplies, tutoring, and more!
             </p>
         </div>

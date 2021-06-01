@@ -152,7 +152,7 @@ input[type="number"] {
   border: 2px solid #9f2d41;
   font-weight: bold;
   font-size: 18px;
-  padding-left: 12px;
+  padding: 0 12px;
   margin-right: 4px;
   outline: none;
   font-family: Mulish;
@@ -412,15 +412,37 @@ opacity: 1;
   margin-bottom: 20px;
 }
 
-/* Textbooks Page */
-
-/* Stationery Page */
-
-/* Tutoring Page */
-
-/* Other Page */
-
 /* Search Page */
+
+.search-bar input[type="text"] {
+  border: none;
+  font-weight: bold;
+  font-size: 28px;
+  padding: 0 22px;
+  margin-right: 10px;
+  text-align: center;
+  outline: none;
+  font-family: Mulish;
+  border-radius: 50px;
+  width: 600px;
+  height: 48px;
+}
+
+.search-bar {
+  padding: 40px 0 20px 0;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #d69622;
+  font-size: 35px;
+}
+
+.search-bar button:hover {
+  color:#f4f4f4;
+}
 
 /*Account Page*/
 .account_main {

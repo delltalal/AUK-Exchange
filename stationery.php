@@ -60,6 +60,18 @@ $_user_data = check_login($con);
 
         </div>
     </nav>
+    <header class="header">
+        <div class="header_content container">
+            <h1 class="header_title">Technology</h1>
+            <p class="header_info">
+                Everyone needs pen and paper. In the stationery section, everything from basic school supplies to art
+                supplies are available!
+                For
+                more
+                details and how to contact seller. Click the item for more information.
+            </p>
+        </div>
+    </header>
     <main class="container">
         <?php
         if (isset($_POST['submit-search'])) {
