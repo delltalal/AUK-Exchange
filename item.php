@@ -13,8 +13,8 @@ include("functions.php");
 
 $_user_data = check_login($con);
 
-$id = $_POST['id'];
-$sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE listings.id = " . $id;
+$id = mysqli_real_escape_string($con, $_POST['id']);
+$sql = "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE listings.ID = " . $id;
 
 $result = mysqli_query($con, $sql);
 
@@ -76,7 +76,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <li><a href="book.php">Textbooks</a></li>
                 <li><a href="stationery.php">Stationery</a></li>
                 <li><a href="technology.php">Technology</a></li>
-                <li><a class="highlight-yellow" href="other.php">Others</a></li>
+                <li><a href="other.php">Others</a></li>
                 <!-- if the $_user_data is set/logged in then the user can create an ad, else direct the user to the login page. -->
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
@@ -84,8 +84,19 @@ if ($result && mysqli_num_rows($result) > 0) {
         </div>
     </nav>
 
-
+    <?php
+    
+    if ($_user_data['ID'] == $item_data['ID']) { ?>
+    <form class="delete-ad" method="POST" action="delete_item.php">
+        <input type="hidden" value="<?php echo $id ?>" name="id">
+        <label for="submitbtn1">To delete this ad, press the button.</label>
+        <input type="submit" class="deletebtn" value="Delete Ad" id="submitbtn1">
+    </form>
+    <?php }
+    
+    ?>
     <main class="item-main-container container">
+
         <div class="item-container">
             <h2 class="item-container-title"><?php echo $item_data['name'] ?></h2>
             <img src="images/<?php echo $item_data['Image'] ?>" alt="Item Image" class="item-container-image">
@@ -103,7 +114,8 @@ if ($result && mysqli_num_rows($result) > 0) {
         <div class="info-container">
             <ul class="info-container-list">
                 <li class="item-container-user"><span>Created by:</span> <?php echo $item_data['Username'] ?></li>
-                <li class="item-container-phone"><span>Phone number:</span> <?php echo $item_data['Phone_Num'] ?></li>
+                <li class="item-container-phone"><span>Phone number:</span> <?php echo $item_data['Phone_Num'] ?>
+                </li>
                 <li class="item-container-email"><span>Email:</span> <?php echo $item_data['Email'] ?></li>
             </ul>
         </div>

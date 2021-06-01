@@ -51,10 +51,13 @@ a {
   background-color: #d69622;
 }
 
+
+item
+
 .error-message {
   background-color: #ffaaba;
   text-align: center;
-  padding: 4px 0;
+  padding: 8px 0;
 }
 
 .textbox {
@@ -70,6 +73,7 @@ a {
   height: 36px;
   margin: 10px;
 }
+
 
 .textbox-xl {
   font-family: Mulish;
@@ -117,6 +121,7 @@ input[type="number"] {
   align-items: center;
   margin: 15px 0 30px 0;;
 }
+
 
 /* Top Navigation Bar */
 .top-nav {
@@ -624,4 +629,19 @@ opacity: 1;
   padding-top: 6px;
 }
 
+.delete-ad {
+  background-color: #ffb52e;
+  text-align: center;
+  padding: 8px 0;
+}
+
+
+.deletebtn {
+  all: unset;
+  border: 1px solid #1b1b1b;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 16px;
+
+}
 
