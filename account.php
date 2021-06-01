@@ -3,6 +3,9 @@
     Navigation
     Footer
     Hamad Al-Hendi S0004067 
+
+    Account information display
+    Mohammad Al-Mousawi S0042068
 -->
  <!--
     Search functionality
@@ -35,7 +38,9 @@ $_user_data = check_login($con);
     <nav class="top-nav">
         <div class="top-nav_content container">
             <!-- logo -->
-            <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
+            <a href="homepage.php">
+                <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange </h2>
+            </a>
             <ul class="top-nav_list">
                 <!-- the search option by Talal 47597-->
                 <li class="top-nav_item1">

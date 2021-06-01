@@ -3,6 +3,10 @@
     Navigation
     Footer
     Hamad Al-Hendi S0004067
+
+    Active ads functionality
+    Mohammad Al-Mousawi S0042068
+    
 -->
  <!--
     Search functionality
@@ -35,7 +39,9 @@ $_user_data = check_login($con);
     <nav class="top-nav">
         <div class="top-nav_content container">
             <!-- logo -->
-            <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
+            <a href="homepage.php">
+                <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange </h2>
+            </a>
             <ul class="top-nav_list">
                 <!-- the search option by Talal 47957-->
                 <li class="top-nav_item1">
@@ -97,7 +103,7 @@ $_user_data = check_login($con);
                     }
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                        itemCard($row['listing_id'],$row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
+                        itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
                     }
                     ?>
                 </div>
