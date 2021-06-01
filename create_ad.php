@@ -116,26 +116,6 @@ $_user_data = check_login($con);
         ?>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content container">
-            <div class="footer-title">
-                <h4 class="footer-title_subject">CSIS 255 Project</h4>
-                <h4 class="footer-title_validation">W3C Validation</h4>
-            </div>
-            <div class="footer-details">
-                <ul class="footer-details-names">
-                    <li>Tareq</li>
-                    <li>Talal</li>
-                    <li>Mohammad</li>
-                    <li>Hamad</li>
-                </ul>
-                <ul class="footer-details-icons">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-</body>
-
+    <?php footer();
+    ?>
 </html>

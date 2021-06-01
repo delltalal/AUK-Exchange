@@ -93,33 +93,8 @@ $_user_data = check_login($con);
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer-content container">
-            <div class="footer-title">
-                <h4 class="footer-title_subject">CSIS 255 Project</h4>
-                <h4 class="footer-title_validation">W3C Validation</h4>
-            </div>
-            <div class="footer-details">
-                <ul class="footer-details-names">
-                    <li>Tareq</li>
-                    <li>Talal</li>
-                    <li>Mohammad</li>
-                    <li>Hamad</li>
-                </ul>
-                <ul class="footer-details-icons">
-                    <li>HTML</li>
-                    <li>
-                        <p>
-                            <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                                <img style="border:0;width:88px;height:31px"
-                                    src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
-                            </a>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <?php footer();
+    ?>
 </body>
 
 </html>

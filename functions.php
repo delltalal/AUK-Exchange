@@ -1,5 +1,32 @@
 <?php
 
+function footer() {
+    $element = '<footer class="footer">
+        <div class="footer-content container">
+            <div class="footer-title">
+                <h4 class="footer-title_subject">CSIS 255 Project</h4>
+                <h4 class="footer-title_validation">W3C Validation</h4>
+            </div>
+            <div class="footer-details">
+                <ul class="footer-details-names">
+                    <li>Tareq <span class="highlight-yellow">S00</span></li>
+                    <li>Talal <span class="highlight-yellow">S00</span></li>
+                    <li>Mohammad <span class="highlight-yellow">S00</span></li>
+                    <li>Hamad Al-Hendi <span class="highlight-yellow">S0040674</span></li>
+                </ul>
+                <ul class="footer-details-icons">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>';
+
+echo $element;
+
+}
+
 function check_login($con)
 {
 
@@ -52,5 +79,3 @@ function getLatestListingsData($con)
         return $result;
     }
 }
-
-?>
