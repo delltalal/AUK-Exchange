@@ -21,7 +21,7 @@ function footer()
             <div class="footer-details">
                 <ul class="footer-details-names">
                     <li>Tareq <span class="highlight-yellow">S00</span></li>
-                    <li>Talal <span class="highlight-yellow">S00</span></li>
+                    <li>Talal <span class="highlight-yellow">S0047597</span></li>
                     <li>Mohammad <span class="highlight-yellow">S00</span></li>
                     <li>Hamad Al-Hendi <span class="highlight-yellow">S0040674</span></li>
                 </ul>
