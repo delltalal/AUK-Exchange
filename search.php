@@ -95,6 +95,7 @@ $_user_data = check_login($con);
     </header>
     <main class="container">
         <div class="organize-item-card">
+        <!-- Takes the text from the search bar and checks for the searched item in the listings database -->
             <?php
             $search = mysqli_real_escape_string($con, $_POST['search']);
             $sql = "SELECT *, listings.ID AS listing_id  FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
