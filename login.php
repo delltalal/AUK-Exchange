@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <nav class="top-nav">
         <div class="top-nav_content container">
             <!-- logo -->
-            <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
+            <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
                     <form action="search.php" method="POST">
