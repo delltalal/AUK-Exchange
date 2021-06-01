@@ -88,13 +88,13 @@ $_user_data = check_login($con);
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);
-            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
+            $sql = "SELECT *, listings.ID AS listing_id  FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
             $result = mysqli_query($con, $sql);
             $queryResult = mysqli_num_rows($result);
 
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                    itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
             } else {
                 echo "This item does not exist";
@@ -103,12 +103,12 @@ $_user_data = check_login($con);
         ?>
         <div class="organize-item-card">
             <?php
-            $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Technology'");
+            $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Technology'");
             if (!$resultii) {
                 exit('No listings are available at the moment.');
             }
             while ($row = mysqli_fetch_assoc($resultii)) {
-                itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
             }
             ?></div>
     </main>

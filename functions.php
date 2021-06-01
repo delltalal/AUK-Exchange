@@ -86,7 +86,7 @@ function itemCard($id, $title, $price, $img, $location, $date)
 //returns a query result to the caller of all records where the user's id and foreign key of the item matches (the records created by the user)
 function getUserListingsData($con, $id)
 {
-    $query = "SELECT * FROM listings WHERE account_fk = '$id'";
+    $query = "SELECT *, listings.ID AS listing_id  FROM listings WHERE account_fk = '$id'";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0) {
         return $result;
@@ -96,7 +96,7 @@ function getUserListingsData($con, $id)
 //returns a query result to the caller of the last 12 records created within the listings table along with the information of the account that created the listing.
 function getLatestListingsData($con)
 {
-    $query = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID ORDER BY listings.ID DESC LIMIT 12";
+    $query = "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID ORDER BY listings.ID DESC LIMIT 12";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0) {
         return $result;
