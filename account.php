@@ -4,7 +4,7 @@
     Footer
     Hamad Al-Hendi S0004067 
 
-    Active information display
+    Account information display
     Mohammad Al-Mousawi S0042068
 -->
 
