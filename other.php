@@ -5,6 +5,11 @@
     Footer
     Hamad Al-Hendi S00040674
 -->
+ <!--
+    Search functionality
+    Listings items from the others category
+    Talal Al-Failakawi 47597
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
 session_start();
@@ -82,7 +87,7 @@ $_user_data = check_login($con);
         </div>
     </header>
     <main class="container">
-        <!--Search made by Talal-->
+        <!--Search made by Talal 47597-->
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -100,7 +105,7 @@ $_user_data = check_login($con);
         }
         ?>
         <div class="organize-item-card">
-        <!--lists all of the items that are defined as "other"--><!--made by Talal-->
+        <!--lists all of the items that are defined as "other"--><!--made by Talal 47597-->
         <?php
             $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
             $queryResultii = mysqli_num_rows($resultii);

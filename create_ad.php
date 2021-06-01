@@ -5,6 +5,10 @@
     Footer
     Hamad Al-Hendi S00040674
  -->
+ <!--
+    Search functionality
+    Talal Al-Failakawi 47597
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
 session_start();
@@ -34,7 +38,7 @@ $_user_data = check_login($con);
             <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <!-- search option -->
+                    <!-- search option by Talal 47597 -->
                     <form action="search.php" method="POST">
                         <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit"><i class="fas fa-search"></i></button>
