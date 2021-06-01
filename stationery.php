@@ -62,7 +62,7 @@ $_user_data = check_login($con);
     </nav>
     <header class="header">
         <div class="header_content container">
-            <h1 class="header_title">Technology</h1>
+            <h1 class="header_title">Stationery</h1>
             <p class="header_info">
                 Everyone needs pen and paper. In the stationery section, everything from basic school supplies to art
                 supplies are available!
