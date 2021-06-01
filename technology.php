@@ -103,18 +103,22 @@ $_user_data = check_login($con);
         ?>
         <div class="organize-item-card">
         <!--lists all of the items that are defined as "technology"-->
-            <?php
+        <?php
             $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Technology'");
-            if (!$resultii) {
-                exit('No listings are available at the moment.');
+            $queryResultii = mysqli_num_rows($resultii);
+            if ($queryResultii > 0) {
+                while ($row = mysqli_fetch_assoc($resultii)) {
+                    itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                }
+                
+            }else{
+                echo "<div class=\"search-error\">No listings are available at the moment.</div>";
             }
-            while ($row = mysqli_fetch_assoc($resultii)) {
-                itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
-            }
+            
             ?></div>
     </main>
     <!-- prints out the footer -->
-    <? footer(); ?>
+    <?php footer(); ?>
 </body>
 
 </html>
