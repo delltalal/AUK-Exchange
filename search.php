@@ -83,7 +83,7 @@ $_user_data = check_login($con);
             <h1 class="header_title">Search</h1>
 
             <p class="header_info">
-                Search using keywords to find any items you may be looking for from out database.
+                Search using keywords to find any items you may be looking for from our database.
             </p>
             <div class="search-bar">
                 <form action="search.php" method="POST">
