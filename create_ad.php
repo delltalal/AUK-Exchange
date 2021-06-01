@@ -51,7 +51,7 @@ $_user_data = check_login($con);
                 <li>
                     <a href="stationery.php">Stationery</a>
                 </li>
-                <li><a href="tutoring.php">Tutoring</a></li>
+                <li><a href="technology.php">Technology</a></li>
                 <li><a href="other.php">Others</a></li>
                 <li class="bottom-nav_lastitem">
                     <a href="ad.php" class="highlight-dark-yellow highlight-dark-yellow-border"> Place an

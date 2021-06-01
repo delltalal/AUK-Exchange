@@ -16,7 +16,7 @@ $_user_data = check_login($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/94d3d9c85c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
-    <title>AUKExchange | Tutoring</title>
+    <title>AUKExchange | Technology</title>
 </head>
 
 <body>
@@ -51,7 +51,7 @@ $_user_data = check_login($con);
                 <li><a href="homepage.php">Home</a></li>
                 <li><a href="book.php">Textbooks</a></li>
                 <li><a href="stationery.php">Stationery</a></li>
-                <li><a class="highlight-yellow" href="tutoring.php">Tutoring</a></li>
+                <li><a class="highlight-yellow" href="technology.php">Technology</a></li>
                 <li><a href="other.php">Others</a></li>
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>

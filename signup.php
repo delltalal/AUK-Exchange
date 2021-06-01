@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <li><a href="homepage.php">Home</a></li>
                 <li><a href="book.php">Textbooks</a></li>
                 <li><a href="stationery.php">Stationery</a></li>
-                <li><a href="tutoring.php">Tutoring</a></li>
+                <li><a href="technology.php">Technology</a></li>
                 <li><a href="other.php">Others</a></li>
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
