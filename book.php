@@ -84,7 +84,7 @@ $_user_data = check_login($con);
         </div>
     </header>
     <main class="container">
-
+            <!--Search made by Talal-->
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -102,7 +102,7 @@ $_user_data = check_login($con);
         }
         ?>
         <div class="organize-item-card">
-        <!--lists all of the items that are defined as "textbook"-->
+        <!--lists all of the items that are defined as "textbook"--><!--made by Talal-->
             <?php
             $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Textbook'");
             $queryResultii = mysqli_num_rows($resultii);

@@ -82,6 +82,7 @@ $_user_data = check_login($con);
         </div>
     </header>
     <main class="container">
+        <!--Search made by Talal-->
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -94,12 +95,12 @@ $_user_data = check_login($con);
                     itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
             } else {
-                echo "This item does not exist";
+                echo "<div class=\"search-error\">The item you searched for does not exist.</div>";
             }
         }
         ?>
         <div class="organize-item-card">
-        <!--lists all of the items that are defined as "other"-->
+        <!--lists all of the items that are defined as "other"--><!--made by Talal-->
         <?php
             $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
             $queryResultii = mysqli_num_rows($resultii);
