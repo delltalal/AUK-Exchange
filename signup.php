@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
     <section class="signupFormContainer container">
         <h2 class="FormHeading">Sign Up Here</h2>
-        <for name="signupForm" class="signupForm" id="signupForm" action="signup.php"
+        <form name="signupForm" class="signupForm" id="signupForm" action="signup.php"
             onsubmit="return validateSignupForm()" method="POST">
             <input type="text" name="Fname" class="textbox" id="signupFname" placeholder="First Name" />
             <input type="text" name="Lname" class="textbox" id="signupLname" placeholder="Last Name" />
@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="password" name="confirm_password" class="textbox" id="confirm_signupPassword"
                 placeholder="Confirm Password" />
             <input type="submit" class="submitbtn" value="Sign Up" />
-        </for>
+        </form>
     </section>
     <!-- prints out the footer -->
 
