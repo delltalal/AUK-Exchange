@@ -107,7 +107,7 @@ $_user_data = check_login($con);
                     itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
             } else {
-                echo "This item does not exist";
+                echo "<div class=\"search-error\">The item you searched for does not exist.</div>";
             }
             ?>
     </main>
