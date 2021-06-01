@@ -99,6 +99,7 @@ $_user_data = check_login($con);
         }
         ?>
         <div class="organize-item-card">
+        <!--lists all of the items that are defined as "other"-->
             <?php
             $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Others'");
             if (!$resultii) {
