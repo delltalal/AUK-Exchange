@@ -1,4 +1,12 @@
+<!-- 
+    Session
+    Navigation
+    Footer
+    Hamad Al-Hendi S0004067 
+-->
+
 <?php
+//starts a session and saves the data of the user within $_user_data
 session_start();
 include("connection.php");
 include("functions.php");
@@ -20,16 +28,20 @@ $_user_data = check_login($con);
 </head>
 
 <body>
+    <!-- top navigation containing the logo of the website, a search option, login/account details, and a signup/logout. -->
     <nav class="top-nav">
         <div class="top-nav_content container">
+            <!-- logo -->
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
+                <!-- the search option -->
                 <li class="top-nav_item1">
                     <form action="search.php" method="GET">
                         <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </li>
+                <!-- if a $_user_data's ID is set display their username and a logout option, else display the login and signup options. -->
                 <?php if (isset($_user_data['ID'])) { ?>
                 <li class="top-nav_item2"><a class="highlight-dark-yellow" href="account.php"><i
                             class="fas fa-user fa-lg"></i>&nbsp; <?php echo $_user_data['Username'] ?></a></li>
@@ -46,6 +58,7 @@ $_user_data = check_login($con);
     </nav>
     <nav class="bottom-nav">
         <div class="bottom-nav_content container">
+            <!-- a list of webpages that the user can navigate to -->
             <ul class="bottom-nav_list">
                 <li><a href="homepage.php">Home</a></li>
                 <li><a href="book.php">Textbooks</a></li>
@@ -54,6 +67,8 @@ $_user_data = check_login($con);
                 </li>
                 <li><a href="technology.php">Technology</a></li>
                 <li><a href="other.php">Others</a></li>
+                <!-- if the $_user_data is set/logged in then the user can create an ad, else direct the user to the
+                login page. -->
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
             </ul>
@@ -84,6 +99,7 @@ $_user_data = check_login($con);
             </ul>
         </div>
     </main>
+    <!-- prints out the footer -->
     <?php footer();
     ?>
 </body>

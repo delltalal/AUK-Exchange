@@ -1,4 +1,13 @@
+<!--  
+    Session
+    Signup Functionality
+    Navigation
+    Select-Option with locations
+    Footer
+    Hamad Al-Hendi S0004067
+-->
 <?php
+//starts a session and saves the data of the user within $_user_data
 session_start();
 include("connection.php");
 include("functions.php");
@@ -35,11 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body>
+    <!-- top navigation containing the logo of the website, a search option, login/account details, and a signup/logout. -->
     <nav class="top-nav">
         <div class="top-nav_content container">
+            <!-- logo -->
             <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange</h2>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
+                    <!-- search option -->
                     <form action="search.php" method="GET">
                         <input type="text" name="search" id="search" placeholder="Enter search terms..." required />
                         <button type="submit"><i class="fas fa-search"></i></button>
@@ -54,12 +66,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
     <nav class="bottom-nav">
         <div class="bottom-nav_content container">
+            <!-- a list of webpages that the user can navigate to -->
             <ul class="bottom-nav_list">
                 <li><a href="homepage.php">Home</a></li>
                 <li><a href="book.php">Textbooks</a></li>
                 <li><a href="stationery.php">Stationery</a></li>
                 <li><a href="technology.php">Technology</a></li>
                 <li><a href="other.php">Others</a></li>
+                <!-- if the $_user_data is set/logged in then the user can create an ad, else direct the user to the login page. -->
+
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
             </ul>
@@ -67,12 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
     <section class="signupFormContainer container">
         <h2 class="FormHeading">Sign Up Here</h2>
-        <form name="signupForm" class="signupForm" id="signupForm" action="signup.php"
+        <for name="signupForm" class="signupForm" id="signupForm" action="signup.php"
             onsubmit="return validateSignupForm()" method="POST">
             <input type="text" name="Fname" class="textbox" id="signupFname" placeholder="First Name" />
             <input type="text" name="Lname" class="textbox" id="signupLname" placeholder="Last Name" />
             <input type="text" name="user" class="textbox" id="signupUser" placeholder="Username" />
             <input type="email" name="email" class="textbox" id="signupEmail" placeholder="Email" required />
+            <!-- a selection-option that has most locations of Kuwait. The first option value is meant as a placeholder, thus disabled. -->
             <select class="textbox" name="location" required>
                 <option value="" disabled selected>Location</option>
                 <option>Abdalah Port</option>
@@ -190,8 +206,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="password" name="confirm_password" class="textbox" id="confirm_signupPassword"
                 placeholder="Confirm Password" />
             <input type="submit" class="submitbtn" value="Sign Up" />
-        </form>
+        </for>
     </section>
+    <!-- prints out the footer -->
 
     <?php footer(); ?>
 </body>

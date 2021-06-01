@@ -1,7 +1,17 @@
-<?php
+<?php 
+/*
+footer
+check_login
+component
+getUserListingData
+getLatestListingsData
+Hamad Al-Hendi S00040674
+*/
 
+//a function that will print out the footer, this is attached on every page and reduces redundancy.
 function footer()
 {
+    // includes a list of group members along with CSS validator icon.
     $element = '<footer class="footer">
         <div class="footer-content container">
             <div class="footer-title">
@@ -16,7 +26,6 @@ function footer()
                     <li>Hamad Al-Hendi <span class="highlight-yellow">S0040674</span></li>
                 </ul>
                 <ul class="footer-details-icons">
-                    <li>HTML</li>
                     <li><p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
@@ -27,22 +36,24 @@ function footer()
                 </ul>
             </div>
         </div>
-    </footer>
-</body>';
+    </footer>';
 
+    // prints out the footer
     echo $element;
 }
 
+// a function that retrieves data from the database about the currently logged in user.
 function check_login($con)
 {
 
     if (isset($_SESSION['ID'])) {
-
+        //takes the id from the session array to be used within the sql query
         $id = $_SESSION['ID'];
         $query = "SELECT * FROM accounts WHERE ID = '$id'";
 
         $result = mysqli_query($con, $query);
 
+        //confirms that the account exist and if true, returns the account data.
         if ($result && mysqli_num_rows($result) > 0) {
             $user_data = mysqli_fetch_array($result);
             return $user_data;
@@ -50,6 +61,7 @@ function check_login($con)
     }
 }
 
+// a function that prints out the item cards. parameters contain information about the item and allows the user to reuse this function in a loop to print multiple item-card elements
 function component($title, $price, $img, $location, $date)
 {
     $element = '
@@ -67,6 +79,7 @@ function component($title, $price, $img, $location, $date)
     echo $element;
 }
 
+//returns a query result to the caller of all records where the user's id and foreign key of the item matches (the records created by the user)
 function getUserListingsData($con, $id)
 {
     $query = "SELECT * FROM listings WHERE account_fk = '$id'";
@@ -76,7 +89,7 @@ function getUserListingsData($con, $id)
     }
 }
 
-
+//returns a query result to the caller of the last 12 records created within the listings table along with the information of the account that created the listing.
 function getLatestListingsData($con)
 {
     $query = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID ORDER BY listings.ID DESC LIMIT 12";

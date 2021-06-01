@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 01:43 AM
+-- Generation Time: Jun 01, 2021 at 10:48 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -69,14 +69,14 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`ID`, `account_fk`, `name`, `price`, `description`, `date_added`, `Image`, `Category`) VALUES
-(1, 1, 'Biology Book', 10, 'A book for biology 100 course. Mint condition.', '2021-05-27', 'Biology Book.jpg', 'Textbook'),
-(2, 1, 'CSIS 255 Book', 10, 'A CSIS 255 book with material about HTML and CSS. Very good condition.', '2021-05-27', 'CSIS 255 Book.jpg', 'Textbook'),
-(3, 1, 'Used Macbook 2020', 200, 'Used Macbook 2020 with great specs:\r\n- M1 chipset.\r\n- 1TB storage\r\n\r\nSelling because I am buying a new one.', '2021-05-27', 'Macbook.jpg', 'Others'),
+(1, 1, 'Biology Book', 10, 'A book for biology 100 course. Mint condition.', '2021-05-27', 'Biology-book.jpg', 'Textbook'),
+(2, 1, 'CSIS 255 Book', 10, 'A CSIS 255 book with material about HTML and CSS. Very good condition.', '2021-05-27', 'CSIS255-book.jpg', 'Textbook'),
+(3, 1, 'Used Macbook 2020', 200, 'Used Macbook 2020 with great specs:\r\n- M1 chipset.\r\n- 1TB storage\r\n\r\nSelling because I am buying a new one.', '2021-05-27', 'Macbook.jpg', 'Technology'),
 (4, 2, 'Color-aid', 20, 'Color-aid paper that is used for ART 101. Very used but still useful for the course.', '2021-05-27', 'Color-aid.jpg', 'Stationery'),
-(5, 3, 'Calculus II Book', 15, 'Calculus II book that can be used for MATH 203. Great condition.', '2021-05-27', 'Math Book.jpg', 'Textbook'),
-(6, 3, 'CPEG 210 Book', 17, 'Book about digital design. Very useful for this course. ', '2021-05-27', 'CPEG 210 Book.jpg', 'Textbook'),
-(7, 2, 'English 101 Book', 5, 'English book for ENGL 101. Very worn but still useable.', '2021-05-27', 'English Book.jpg', 'Textbook'),
-(8, 3, 'Scientific Calculator', 10, 'Scientific calculator for the math courses. Used but still very useful and fully functional.', '2021-05-27', 'Scientific Calculator.jpg', 'Others');
+(5, 3, 'Calculus II Book', 15, 'Calculus II book that can be used for MATH 203. Great condition.', '2021-05-27', 'Math-book.jpg', 'Textbook'),
+(6, 3, 'CPEG 210 Book', 17, 'Book about digital design. Very useful for this course. ', '2021-05-27', 'CPEG210-book.jpg', 'Textbook'),
+(7, 2, 'English 101 Book', 5, 'English book for ENGL 101. Very worn but still useable.', '2021-05-27', 'English-book.jpg', 'Textbook'),
+(8, 3, 'Scientific Calculator', 10, 'Scientific calculator for the math courses. Used but still very useful and fully functional.', '2021-05-27', 'Scientific-calculator.jpg', 'Technology');
 
 --
 -- Indexes for dumped tables

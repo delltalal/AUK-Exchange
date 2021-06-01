@@ -557,6 +557,13 @@ opacity: 1;
 
 /* create_ad.php */
 
+.create-ad-message {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+
 .create_ad_container {
   display: flex;
   flex-direction: column;
