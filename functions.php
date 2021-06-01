@@ -1,6 +1,7 @@
 <?php
 
-function footer() {
+function footer()
+{
     $element = '<footer class="footer">
         <div class="footer-content container">
             <div class="footer-title">
@@ -16,15 +17,20 @@ function footer() {
                 </ul>
                 <ul class="footer-details-icons">
                     <li>HTML</li>
-                    <li>CSS</li>
+                    <li><p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p></li>
                 </ul>
             </div>
         </div>
     </footer>
 </body>';
 
-echo $element;
-
+    echo $element;
 }
 
 function check_login($con)
@@ -46,28 +52,28 @@ function check_login($con)
 
 function component($title, $price, $img, $location, $date)
 {
-$element = '
+    $element = '
 <div class="item-card">
-    <img class="card-img" src="images/'.$img.'" alt="Ad Image">
-    <a href="homepage.php" class="card-title">'.$title.'</a>
-<div class="card-price">'.$price.' KD</div>
+    <img class="card-img" src="images/' . $img . '" alt="Ad Image">
+    <a href="homepage.php" class="card-title">' . $title . '</a>
+<div class="card-price">' . $price . ' KD</div>
 <ul class="item-card-detail">
-    <li class="card-location"><i class="fas fa-map-marker-alt"></i> '.$location.'</li>
-<li class="card-date">'.$date.'</li>
+    <li class="card-location"><i class="fas fa-map-marker-alt"></i> ' . $location . '</li>
+<li class="card-date">' . $date . '</li>
 
 </ul>
 </div>
 ';
-echo $element;
+    echo $element;
 }
 
 function getUserListingsData($con, $id)
 {
-$query = "SELECT * FROM listings WHERE account_fk = '$id'";
-$result = mysqli_query($con, $query);
-if (mysqli_num_rows($result) > 0) {
-return $result;
-}
+    $query = "SELECT * FROM listings WHERE account_fk = '$id'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    }
 }
 
 
