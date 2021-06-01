@@ -86,6 +86,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     <?php
     
+    if (isset($_user_data['ID'])) {
     if ($_user_data['ID'] == $item_data['ID']) { ?>
     <form class="delete-ad" method="POST" action="delete_item.php">
         <input type="hidden" value="<?php echo $id ?>" name="id">
@@ -93,7 +94,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         <input type="submit" class="deletebtn" value="Delete Ad" id="submitbtn1">
     </form>
     <?php }
-    
+    }
     ?>
     <main class="item-main-container container">
 
