@@ -20,9 +20,9 @@ function footer()
             </div>
             <div class="footer-details">
                 <ul class="footer-details-names">
-                    <li>Tareq <span class="highlight-yellow">S00</span></li>
-                    <li>Talal <span class="highlight-yellow">S0047597</span></li>
-                    <li>Mohammad <span class="highlight-yellow">S00</span></li>
+                    <li>Tareq Humood<span class="highlight-yellow">S0042443</span></li>
+                    <li>Talal Al-Failakawi<span class="highlight-yellow">S0047597</span></li>
+                    <li>Mohammad Al-Mousawi<span class="highlight-yellow">S0042068</span></li>
                     <li>Hamad Al-Hendi <span class="highlight-yellow">S0040674</span></li>
                 </ul>
                 <ul class="footer-details-icons">
