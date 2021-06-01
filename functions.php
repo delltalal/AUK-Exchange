@@ -2,7 +2,7 @@
 /*
 footer
 check_login
-component
+itemCard
 getUserListingData
 getLatestListingsData
 Hamad Al-Hendi S00040674
@@ -62,12 +62,15 @@ function check_login($con)
 }
 
 // a function that prints out the item cards. parameters contain information about the item and allows the user to reuse this function in a loop to print multiple item-card elements
-function component($title, $price, $img, $location, $date)
+function itemCard($id, $title, $price, $img, $location, $date)
 {
     $element = '
 <div class="item-card">
     <img class="card-img" src="images/' . $img . '" alt="Ad Image">
-    <a href="homepage.php" class="card-title">' . $title . '</a>
+    <form method="POST" action="item.php">
+    <input type="hidden" value="'.$id.'" name="id">
+    <input type="submit" class="card-title" value="'.$title.'">
+    </form>
 <div class="card-price">' . $price . ' KD</div>
 <ul class="item-card-detail">
     <li class="card-location"><i class="fas fa-map-marker-alt"></i> ' . $location . '</li>
@@ -78,6 +81,7 @@ function component($title, $price, $img, $location, $date)
 ';
     echo $element;
 }
+
 
 //returns a query result to the caller of all records where the user's id and foreign key of the item matches (the records created by the user)
 function getUserListingsData($con, $id)

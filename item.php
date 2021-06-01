@@ -1,18 +1,29 @@
 <!-- 
     Session
     Navigation
-    Header
+    Item Page
     Footer
     Hamad Al-Hendi S00040674
- -->
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
-
 session_start();
 include("connection.php");
 include("functions.php");
 
 $_user_data = check_login($con);
+
+$id = $_POST['id'];
+$sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE listings.id = " . $id;
+
+$result = mysqli_query($con, $sql);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $item_data = mysqli_fetch_array($result);
+} else {
+    echo '<p class="error-message">There has been an error: This record cannot be shown</p>';
+}
+
 
 ?>
 
@@ -20,12 +31,12 @@ $_user_data = check_login($con);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/94d3d9c85c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
-    <title>AUKExchange | Stationery</title>
+    <title>AUKExchange | Others</title>
 </head>
 
 <body>
@@ -63,63 +74,43 @@ $_user_data = check_login($con);
                 <!-- a list of webpages that the user can navigate to -->
                 <li><a href="homepage.php">Home</a></li>
                 <li><a href="book.php">Textbooks</a></li>
-                <li>
-                    <a class="highlight-yellow" href="stationery.php">Stationery</a>
-                </li>
+                <li><a href="stationery.php">Stationery</a></li>
                 <li><a href="technology.php">Technology</a></li>
-                <li><a href="other.php">Others</a></li>
+                <li><a class="highlight-yellow" href="other.php">Others</a></li>
                 <!-- if the $_user_data is set/logged in then the user can create an ad, else direct the user to the login page. -->
-
                 <li class="bottom-nav_lastitem"><a <?php if (isset($_user_data['ID'])) { ?> href="create_ad.php"
                         <?php } else { ?> href="login.php" <?php } ?>>Place an Ad</a></li>
             </ul>
-
         </div>
     </nav>
-    <!-- a header explaining what the webpage is for, along with its title -->
-    <header class="header">
-        <div class="header_content container">
-            <h1 class="header_title">Stationery</h1>
-            <p class="header_info">
-                Everyone needs pen and paper. In the stationery section, everything from basic school supplies to art
-                supplies are available!
-                For
-                more
-                details and how to contact seller. Click the item for more information.
-            </p>
-        </div>
-    </header>
-    <main class="container">
-        <?php
-        if (isset($_POST['submit-search'])) {
-            $search = mysqli_real_escape_string($con, $_POST['search']);
-            $sql = "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";
-            $result = mysqli_query($con, $sql);
-            $queryResult = mysqli_num_rows($result);
 
-            if ($queryResult > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
-                }
-            } else {
-                echo "This item does not exist";
-            }
-        }
-        ?>
-        <div class="organize-item-card">
-            <?php
-            $resultii = mysqli_query($con, "SELECT * FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Stationery'");
-            if (!$resultii) {
-                exit('No listings are available at the moment.');
-            }
-            while ($row = mysqli_fetch_assoc($resultii)) {
-                itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
-            }
-            ?></div>
+
+    <main class="item-main-container container">
+        <div class="item-container">
+            <h2 class="item-container-title"><?php echo $item_data['name'] ?></h2>
+            <img src="images/<?php echo $item_data['Image'] ?>" alt="Item Image" class="item-container-image">
+            <ul class="item-container-list">
+                <li class="item-container-price"><span>Price:</span> <?php echo $item_data['price'] ?> KD</li>
+                <li class="item-container-desc">
+                    <span>Details: </span> <br /><?php echo $item_data['description'] ?>
+                </li>
+                <li class="item-container-date">
+                    <span>Date added:</span> <?php echo $item_data['date_added'] ?>
+                </li>
+            </ul>
+
+        </div>
+        <div class="info-container">
+            <ul class="info-container-list">
+                <li class="item-container-user"><span>Created by:</span> <?php echo $item_data['Username'] ?></li>
+                <li class="item-container-phone"><span>Phone number:</span> <?php echo $item_data['Phone_Num'] ?></li>
+                <li class="item-container-email"><span>Email:</span> <?php echo $item_data['Email'] ?></li>
+            </ul>
+        </div>
     </main>
     <!-- prints out the footer -->
-
-    <?php footer(); ?>
+    <?php footer();
+    ?>
 </body>
 
 </html>

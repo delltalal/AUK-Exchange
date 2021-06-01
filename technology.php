@@ -94,7 +94,7 @@ $_user_data = check_login($con);
 
             if ($queryResult > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                    itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
             } else {
                 echo "This item does not exist";
@@ -108,7 +108,7 @@ $_user_data = check_login($con);
                 exit('No listings are available at the moment.');
             }
             while ($row = mysqli_fetch_assoc($resultii)) {
-                component($row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                itemCard($row['ID'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
             }
             ?></div>
     </main>

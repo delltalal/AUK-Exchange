@@ -533,6 +533,7 @@ opacity: 1;
 }
 
 .card-title {
+  all: unset;
   font-size: 18px;
   margin: 5px;
   font-weight: bold;
@@ -574,3 +575,53 @@ opacity: 1;
 .create_ad_container form {
   padding-left: 25px;
 }
+
+/*item.php*/
+
+.item-main-container {
+  display: flex;
+  padding: 40px 0;
+}
+
+.item-main-container span {
+  color: #7e2a39;
+  font-weight: bold;
+}
+
+.item-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-container-title {
+  color: #9f2d41;
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.item-container-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.item-container-list {
+  list-style-type: none;
+  padding-top: 20px;
+  align-self: flex-start;
+}
+
+.info-container-list {
+  list-style-type: none;
+}
+
+.item-container-list li,
+.info-container-list li {
+  padding-top: 6px;
+}
+
+

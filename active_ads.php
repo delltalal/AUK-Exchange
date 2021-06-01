@@ -94,7 +94,7 @@ $_user_data = check_login($con);
                     }
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                        component($row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
+                        itemCard($row['ID'],$row['name'], $row['price'], $row['Image'], $_user_data['Location'], $row['date_added']);
                     }
                     ?>
                 </div>
