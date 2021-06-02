@@ -6,7 +6,7 @@ Item Slider
 Footer
 Hamad Al-Hendi S0004067
 -->
- <!--
+<!--
     Search functionality
     Talal Al-Failakawi 47597
 -->
@@ -38,7 +38,9 @@ $_user_data = check_login($con);
     <nav class="top-nav">
         <div class="top-nav_content container">
             <!-- logo -->
-            <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
+            <a href="homepage.php">
+                <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange </h2>
+            </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
                     <!-- search option by Talal 47597-->
@@ -84,7 +86,7 @@ $_user_data = check_login($con);
             <p class="header_info">
                 A place for AUK students to buy or sell from other students.
                 <span class="highlight-yellow">AUK Exchange</span> gives students a
-                platform to sell textbooks, class supplies, tutoring, and more!
+                platform to sell textbooks, class supplies, tech, and more!
             </p>
         </div>
     </header>
