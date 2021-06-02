@@ -4,8 +4,7 @@
     Item Page
     Footer
     Hamad Al-Hendi S00040674
--->
- <!--
+
     Search functionality
     Talal Al-Failakawi 47597
 -->
@@ -17,11 +16,14 @@ include("functions.php");
 
 $_user_data = check_login($con);
 
+// take the id submitted from the form from the itemcard() function
 $id = mysqli_real_escape_string($con, $_POST['id']);
+// this id used to identify which item was clicked and its records are pulled from the database
 $sql = "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE listings.ID = " . $id;
 
 $result = mysqli_query($con, $sql);
 
+// $item_data is used to call the different fields of the record.
 if ($result && mysqli_num_rows($result) > 0) {
     $item_data = mysqli_fetch_array($result);
 } else {
@@ -48,7 +50,9 @@ if ($result && mysqli_num_rows($result) > 0) {
     <nav class="top-nav">
         <div class="top-nav_content container">
             <!-- logo -->
-            <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
+            <a href="homepage.php">
+                <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange </h2>
+            </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
                     <!-- search option by Talal 47597 -->
@@ -90,8 +94,11 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     <?php
     
+    // if the user is locked in then this option should be available
     if (isset($_user_data['ID'])) {
+    // if the user's ID and the item's user's ID matched then this html will be available
     if ($_user_data['ID'] == $item_data['ID']) { ?>
+    <!-- a form that will send the id to the delete_item.php when submitted -->
     <form class="delete-ad" method="POST" action="delete_item.php">
         <input type="hidden" value="<?php echo $id ?>" name="id">
         <label for="submitbtn1">To delete this ad, press the button.</label>
@@ -100,9 +107,12 @@ if ($result && mysqli_num_rows($result) > 0) {
     <?php }
     }
     ?>
+
+    <!-- html of the item.php to display more information about the item. -->
     <main class="item-main-container container">
 
         <div class="item-container">
+            <!-- the different fields are echoed into the html to appear in the webpage -->
             <h2 class="item-container-title"><?php echo $item_data['name'] ?></h2>
             <img src="images/<?php echo $item_data['Image'] ?>" alt="Item Image" class="item-container-image">
             <ul class="item-container-list">
