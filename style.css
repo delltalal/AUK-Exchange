@@ -1,3 +1,18 @@
+/* 
+Top navigation
+Bottom navigation
+Footer
+Main styling
+Utility
+homepage.php
+Item card
+create_ad.php
+item.php
+delete_item.php
+Hamad Al-Hendi S00040674
+ */
+
+/* imports Mulish from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
 
 /* Reset */
@@ -633,6 +648,8 @@ opacity: 1;
 .info-container-list li {
   padding-top: 6px;
 }
+
+/* delete option styling */
 
 .delete-ad {
   background-color: #ffb52e;
