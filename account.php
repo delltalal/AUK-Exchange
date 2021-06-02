@@ -7,7 +7,10 @@
     Account information display
     Mohammad Al-Mousawi S0042068
 -->
-
+ <!--
+    Search functionality
+    Talal Al-Failakawi 47597
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
 session_start();
@@ -39,7 +42,7 @@ $_user_data = check_login($con);
                 <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange </h2>
             </a>
             <ul class="top-nav_list">
-                <!-- the search option -->
+                <!-- the search option by Talal 47597-->
                 <li class="top-nav_item1">
                     <form action="search.php" method="POST">
                         <input type="text" name="search" id="search" placeholder="Search" required />

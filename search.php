@@ -5,6 +5,10 @@
     Footer
     Hamad Al-Hendi S0004067
 -->
+ <!--
+    Search functionality
+    Talal Al-Failakawi 47597
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
 session_start();
@@ -35,7 +39,7 @@ $_user_data = check_login($con);
             <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <!-- search option -->
+                    <!-- search option by Talal 47597 -->
                     <form action="search.php" method="POST">
                         <input type="text" name="search" id="search" placeholder="Search" required />
                         <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
@@ -95,7 +99,7 @@ $_user_data = check_login($con);
     </header>
     <main class="container">
         <div class="organize-item-card">
-        <!-- Takes the text from the search bar and checks for the searched item in the listings database -->
+        <!-- Takes the text from the search bar and checks for the searched item in the listings database by Talal 47597-->
             <?php
             $search = mysqli_real_escape_string($con, $_POST['search']);
             $sql = "SELECT *, listings.ID AS listing_id  FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE name LIKE '%$search%' OR description LIKE '%$search%' OR Category LIKE '%$search%'";

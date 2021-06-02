@@ -5,6 +5,11 @@
     Footer
     Hamad Al-Hendi S0004067
 -->
+ <!--
+    Search functionality
+    Listings items from the textbook category
+    Talal Al-Failakawi 47597
+-->
 <?php
 //starts a session and saves the data of the user within $_user_data
 
@@ -36,7 +41,7 @@ $_user_data = check_login($con);
             <a href="homepage.php"> <h2 class="top-nav_logo"><span class="logo-span">AUK</span>Exchange  </h2> </a>
             <ul class="top-nav_list">
                 <li class="top-nav_item1">
-                    <!-- search option -->
+                    <!-- search option by Talal 47597 -->
                     <form action="search.php" method="POST">
                         <input type="text" name="search" id="search" placeholder="Search" />
                         <button type="submit" name="submit-search"><i class="fas fa-search"></i></button>
@@ -84,7 +89,7 @@ $_user_data = check_login($con);
         </div>
     </header>
     <main class="container">
-
+            <!--Search made by Talal-->
         <?php
         if (isset($_POST['submit-search'])) {
             $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -97,20 +102,24 @@ $_user_data = check_login($con);
                     itemCard($row['listing_id'],$row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
                 }
             } else {
-                echo "This item does not exist";
+                echo "<div class=\"search-error\">The item you searched for does not exist.</div>";
             }
         }
         ?>
         <div class="organize-item-card">
-        <!--lists all of the items that are defined as "textbook"-->
+        <!--lists all of the items that are defined as "textbook"--><!--made by Talal-->
             <?php
             $resultii = mysqli_query($con, "SELECT *, listings.ID AS listing_id FROM listings INNER JOIN accounts ON listings.account_fk = accounts.ID WHERE Category LIKE 'Textbook'");
-            if (!$resultii) {
-                exit('No listings are available at the moment.');
+            $queryResultii = mysqli_num_rows($resultii);
+            if ($queryResultii > 0) {
+                while ($row = mysqli_fetch_assoc($resultii)) {
+                    itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
+                }
+                
+            }else{
+                echo "<div class=\"search-error\">No listings are available at the moment.</div>";
             }
-            while ($row = mysqli_fetch_assoc($resultii)) {
-                itemCard($row['listing_id'], $row['name'], $row['price'], $row['Image'], $row['Location'], $row['date_added']);
-            }
+            
             ?></div>
     </main>
     <!-- prints out the footer -->
